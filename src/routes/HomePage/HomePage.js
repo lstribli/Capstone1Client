@@ -1,14 +1,15 @@
 import React from 'react'
-
+import './HomePage.css'
+import { Section } from '../../components/Utils/Utils'
 export default class HomePage extends React.Component {
   render() {
     return (
-      <section>
-        <div>
+      <Section>
+        <div className="appTitle">
           <h2>Aura</h2>
         </div>
-        <div>
-          <h3>How to use</h3>
+        <div className="appInstruct">
+          <h3>How to use:</h3>
         </div>
         <div>
           <ul>
@@ -26,12 +27,9 @@ export default class HomePage extends React.Component {
               Your notes are just that- YOUR notes. No other users will be able to Read or access your information!
           </p>
             </li>
-
-
-
           </ul>
         </div>
-      </section>
+      </Section>
     )
   }
 }

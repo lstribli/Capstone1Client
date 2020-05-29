@@ -1,13 +1,31 @@
-
 .Hyph {
   margin-right: 5px;
   margin-left: 5px;
 }
-
+.user_name {
+  font-size: 20px;
+  font-weight: bolder;
+  color: whitesmoke;
+}
+.password {
+  font-size: 20px;
+  font-weight: bolder;
+  color: whitesmoke;
+}
 .Input,
 .Textarea {
-  border: 1px solid #ddd;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+  margin: 9px;
+  padding: 15px;
+  color: rgb(65, 225, 204);
+  background-color: rgba(91, 4, 131, 0.568);
+  border: 1px solid magenta;
+  border-radius: 22px;
+  font-weight: bold;
   font-size: 1.1em;
   margin-bottom: 10px;
   padding: 10px;
@@ -18,33 +36,37 @@
 
 .Input::placeholder,
 .Textarea::placeholder {
-  color: #ccc;
+  color: rgb(65, 225, 204);
 }
-
+.Input::placeholder,
+.Textarea::placeholder:focus {
+  color: rgb(65, 225, 204);
+}
 .Textarea {
   resize: vertical;
 }
 
 .Button {
-  order: 1px solid #aaa;
-  background-color: #eee;
+  display: border-box;
+  border: 1px solid magenta;
+  background-color: rgb(65, 225, 204);
   font-size: 1.1em;
-  border-radius: 4px;
+  border-radius: 22px;
+  padding: 8px 12px;
+  font-weight: bold;
+}
+.Button:hover {
+  border: 1px solid rgb(65, 225, 204);
+  background-color: magenta;
+  color: rgb(65, 225, 204);
+  font-size: 1.1em;
+  border-radius: 22px;
   padding: 8px 12px;
   font-weight: bold;
 }
 
 .Required {
-  color: #CA1551;
+  color: rgb(1, 255, 22);
   font-family: Arial;
   font-weight: bold;
-}
-
-.Section {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.Section--list {
-  margin-left: 10px;
-  margin-right: 10px;
 }

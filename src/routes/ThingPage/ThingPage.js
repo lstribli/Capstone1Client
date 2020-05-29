@@ -4,6 +4,7 @@ import ThingApiService from '../../services/thing-api-service'
 import { Section } from '../../components/Utils/Utils'
 import ReviewForm from '../../components/ReviewForm/ReviewForm'
 import './ThingPage.css'
+import { Button } from '../../components/Utils/Utils'
 // import jwtDecode from 'jwt-decode'
 // import TokenService from '../../services/token-service'
 import { Link } from 'react-router-dom'
@@ -34,7 +35,7 @@ export default class ThingPage extends Component {
 
   renderThing() {
     const { thing, reviews } = this.context
-
+    console.log(thing.image)
     return <>
       <div className='ThingPage__image' style={{ backgroundImage: `url(${thing.image})` }} />
       <h2>{thing.title}</h2>
@@ -46,6 +47,7 @@ export default class ThingPage extends Component {
 
   render() {
     const { error, thing } = this.context
+
     let content
     if (error) {
       content = (error.error === `Thing doesn't exist`)
@@ -56,6 +58,7 @@ export default class ThingPage extends Component {
     } else {
       content = this.renderThing()
     }
+    console.log(content)
     return (
       <Section className='ThingPage'>
         {content}
@@ -89,10 +92,10 @@ function ThingReviews({ thing = {}, reviews = [], onDelete }) {
           </p>
           <Link
             to='/edit'>
-            <button >Edit</button>
+            <Button >Edit</Button>
           </Link>
 
-          <button onClick={() => ThingApiService.deleteReview(review.id).then(() => onDelete(review.id))}>Delete</button>
+          <Button onClick={() => ThingApiService.deleteReview(review.id).then(() => onDelete(review.id))}>Delete</Button>
         </li>
       )}
     </ul>

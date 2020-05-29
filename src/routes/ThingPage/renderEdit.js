@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 export default class EditNotePage extends React.Component {
   static contextType = thingContext
   render() {
-    const { reviews } = this.context
+    const { thing, reviews } = this.context
     console.log(this.context)
     // const review = this.context.reviews.map(review => review.id)
 

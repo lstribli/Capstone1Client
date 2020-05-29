@@ -14,9 +14,11 @@
 }
 
 .ThingListItem__image {
+  display: flex;
 }
 
 .ThingListItem__details {
+  display: flex;
 }
 
 .ThingListItem__details h2 {

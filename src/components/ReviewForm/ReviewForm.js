@@ -5,6 +5,7 @@ import { Textarea } from '../Utils/Utils'
 import './ReviewForm.css'
 import TokenService from '../../services/token-service'
 import jwtDecode from 'jwt-decode'
+import { Button } from '../Utils/Utils'
 // import { isThisSecond } from 'date-fns'
 
 export default class ReviewForm extends Component {
@@ -63,9 +64,9 @@ export default class ReviewForm extends Component {
           </Textarea>
         </div>
 
-        <button onClick={() => ThingApiService.postReview(thing)} type='submit'>
+        <Button onClick={() => ThingApiService.postReview(thing)} type='submit'>
           Post Note
-        </button>
+        </Button>
       </form>
     )
   }

@@ -1,7 +1,17 @@
 .ThingPage__image {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(calc(180px + 12vmin), 100%), 1fr)
+  );
+  border: var(--border);
 }
 
 .ThingPage__review-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .ThingPage__content {
@@ -22,4 +32,8 @@
 }
 
 .ThingPage__review-user {
+}
+section {
+  display: flex;
+  flex-direction: column;
 }
