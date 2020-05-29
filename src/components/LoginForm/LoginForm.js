@@ -7,7 +7,6 @@ export default class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => { }
   }
-
   state = { error: null }
 
   handleSubmitJwtAuth = ev => {

@@ -74,10 +74,9 @@ function ThingContent({ thing }) {
 
 
 function ThingReviews({ thing = {}, reviews = [], onDelete }) {
-  // console.log(reviews)
-  // console.log(thing)
+
   const revByMID = reviews.filter(rev => rev.mood_id === thing.id)
-  // console.log(revByMID)
+
   return (
     <ul className='ThingPage__review-list'>
       {revByMID.map(review =>

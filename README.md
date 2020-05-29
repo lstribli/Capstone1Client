@@ -1,4 +1,4 @@
-# Thingful Client
+# Aura Client
 
 ## Setting Up
 
