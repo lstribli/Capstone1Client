@@ -1,9 +1,28 @@
 import config from '../config'
 import TokenService from './token-service';
+// import RegistrationForm from '../components/RegistrationForm/RegistrationForm'
 // const userName = config.userName;
 // const password = config.password;
 
 const ThingApiService = {
+  postCredentials(user_name, password) {
+
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        user_name,
+        password,
+      }),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
   getThings() {
     return fetch(`${config.API_ENDPOINT}/meditations`, {
       headers: {
@@ -42,9 +61,6 @@ const ThingApiService = {
   },
   postReview(title, content, thing_id, user_id) {
 
-    // console.log('PostReview: mood_id', thing_id)
-    // console.log('postReview: user_id', user_id)
-
     return fetch(`${config.API_ENDPOINT}/notes`, {
       method: 'POST',
       headers: {
@@ -54,7 +70,6 @@ const ThingApiService = {
       body: JSON.stringify({
         title,
         content,
-
         user_id,
         mood_id: thing_id
       }),
@@ -80,14 +95,13 @@ const ThingApiService = {
     )
       .catch(next)
   },
-  editReview(review, next, title, content, user_id, ) {
+  editReview(title, content, user_id, review, ) {
     console.log(review)
     const newReview = {
       body: JSON.stringify({
         title,
         content,
         user_id,
-        mood_id: 1
       })
     }
     return fetch(`${config.API_ENDPOINT}/notes/${review.id}`, {

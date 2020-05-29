@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 // import PrivateRoute from '../Utils/PrivateRoute'
 // import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
+import HomePage from '../../routes/HomePage/HomePage'
 import ThingListPage from '../../routes/ThingListPage/ThingListPage'
 import ThingPage from '../../routes/ThingPage/ThingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
@@ -32,11 +33,16 @@ class App extends Component {
             <Route
               exact
               path={'/'}
-              component={ThingListPage}
+              component={HomePage}
             />
             <Route
               path={'/login'}
               component={LoginPage}
+            />
+            <Route
+              exact
+              path={'/meditations'}
+              component={ThingListPage}
             />
             <Route
               path={'/register'}

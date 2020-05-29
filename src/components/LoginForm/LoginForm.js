@@ -29,17 +29,6 @@ export default class LoginForm extends Component {
         this.setState({ error: res.error })
       })
   }
-  // handleSubmitBasicAuth = ev => {
-  //   ev.preventDefault()
-  //   const { user_name, password } = ev.target
-
-  //   console.log('login form submitted')
-  //   console.log({ user_name, password })
-
-  //   user_name.value = ''
-  //   password.value = ''
-  //   this.props.onLoginSuccess()
-  // }
 
   render() {
     const { error } = this.state

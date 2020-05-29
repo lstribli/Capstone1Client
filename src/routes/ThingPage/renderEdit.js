@@ -8,12 +8,13 @@ export default class EditNotePage extends React.Component {
   static contextType = thingContext
   render() {
     const { reviews } = this.context
+    console.log(this.context)
     // const review = this.context.reviews.map(review => review.id)
-    // console.log('reviews', reviews)
+
     return (
       <form
         className='ReviewForm'
-        onSubmit={() => ThingApiService.editReview(reviews.id)}
+        onSubmit={() => ThingApiService.editReview(reviews)}
       >
         <div className='text'>
           <textarea

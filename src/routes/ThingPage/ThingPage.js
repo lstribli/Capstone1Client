@@ -4,8 +4,8 @@ import ThingApiService from '../../services/thing-api-service'
 import { Section } from '../../components/Utils/Utils'
 import ReviewForm from '../../components/ReviewForm/ReviewForm'
 import './ThingPage.css'
-import jwtDecode from 'jwt-decode'
-import TokenService from '../../services/token-service'
+// import jwtDecode from 'jwt-decode'
+// import TokenService from '../../services/token-service'
 import { Link } from 'react-router-dom'
 
 export default class ThingPage extends Component {
@@ -39,7 +39,7 @@ export default class ThingPage extends Component {
       <div className='ThingPage__image' style={{ backgroundImage: `url(${thing.image})` }} />
       <h2>{thing.title}</h2>
       <ThingContent thing={thing} />
-      <ThingReviews reviews={reviews} onDelete={id => this.context.deleteReview(id)} />
+      <ThingReviews reviews={reviews} thing={thing} onDelete={id => this.context.deleteReview(id)} />
       <ReviewForm {...this.props} />
     </>
   }
@@ -73,11 +73,14 @@ function ThingContent({ thing }) {
 }
 
 
-function ThingReviews({ reviews = [], onDelete }) {
-
+function ThingReviews({ thing = {}, reviews = [], onDelete }) {
+  // console.log(reviews)
+  // console.log(thing)
+  const revByMID = reviews.filter(rev => rev.mood_id === thing.id)
+  // console.log(revByMID)
   return (
     <ul className='ThingPage__review-list'>
-      {reviews.map(review =>
+      {revByMID.map(review =>
         <li key={review.id} className='ThingPage__review'>
           <p className='ThingPage__review-text'>
             {review.title}

@@ -40,8 +40,12 @@ export default class Header extends Component {
       <nav className='Header'>
         <h1>
           <Link to='/'>
-
             HOME
+          </Link>
+        </h1>
+        <h1>
+          <Link to='/meditations'>
+            Meditate
           </Link>
         </h1>
         <span className='Header__tagline--wide'>Meditate, Reflect, Renew</span>
@@ -50,7 +54,7 @@ export default class Header extends Component {
           : this.renderLoginLink()}
       </nav>
 
-      <span className='Header__tagline--narrow'>Rate all the things.</span>
+
     </>
   }
 }

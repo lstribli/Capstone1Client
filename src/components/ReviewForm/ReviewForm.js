@@ -5,26 +5,24 @@ import { Textarea } from '../Utils/Utils'
 import './ReviewForm.css'
 import TokenService from '../../services/token-service'
 import jwtDecode from 'jwt-decode'
-import { isThisSecond } from 'date-fns'
+// import { isThisSecond } from 'date-fns'
 
 export default class ReviewForm extends Component {
   static contextType = ThingContext
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const e = ev.nativeEvent
-    console.log(e)
-    const { thing } = this.context
-    const mood_id = thing.id
+    // const e = ev.nativeEvent
+    // console.log(e)
     const user_id = jwtDecode(TokenService.getAuthToken()).id
     const { title, content } = ev.target
     const { thingId } = this.props.match.params
-
 
     // console.log('reviewForm: handlesubmit: ev:', ev)
     ThingApiService.postReview(title.value, content.value, thingId, user_id)
       .then(this.context.addReview)
       .then(() => {
+        title.value = ''
         content.value = ''
         // console.log(content.value)
       })
