@@ -27,7 +27,9 @@ class App extends Component {
     //id="background-video"
     return (
       <div className='App'>
-        <iframe id="background-video" width="1280" height="720" src="https://www.youtube.com/embed/n9v-2xF54HM?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="background-video" width="1280" height="720"
+          src="https://www.youtube.com/embed/n9v-2xF54HM?autoplay=1&mute=1"
+          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         <div className="hover"></div>
         <header className='App__header'>
