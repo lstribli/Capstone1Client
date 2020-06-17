@@ -16,11 +16,6 @@ export default class ThingListItem extends Component {
             <h2 className='ThingListItem__heading'>{thing.title}</h2>
             <p className='ThingListItem__description'>{truncate(thing.content)}</p>
           </div>
-
-          {/* <div className='ThingListItem__reviews'>
-            <ThingStarRating rating={thing.average_review_rating} />
-            <span id='ThingListItem__review-count'>{readableReviewCount(thing.number_of_reviews)}</span>
-          </div> */}
         </div>
       </Link>
     )

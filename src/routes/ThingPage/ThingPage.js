@@ -5,9 +5,7 @@ import { Section } from '../../components/Utils/Utils'
 import ReviewForm from '../../components/ReviewForm/ReviewForm'
 import './ThingPage.css'
 import { Button } from '../../components/Utils/Utils'
-// import jwtDecode from 'jwt-decode'
-// import TokenService from '../../services/token-service'
-import { Link } from 'react-router-dom'
+
 
 export default class ThingPage extends Component {
 
@@ -90,10 +88,7 @@ function ThingReviews({ thing = {}, reviews = [], onDelete }) {
           <p>
             {review.content}
           </p>
-          {/* <Link
-            to='/edit'>
-            <Button >Edit</Button>
-          </Link> */}
+
 
           <Button onClick={() => ThingApiService.deleteReview(review.id).then(() => onDelete(review.id))}>Delete</Button>
         </li>

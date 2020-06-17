@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
-// import PrivateRoute from '../Utils/PrivateRoute'
-// import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import HomePage from '../../routes/HomePage/HomePage'
 import ThingListPage from '../../routes/ThingListPage/ThingListPage'
 import ThingPage from '../../routes/ThingPage/ThingPage'
