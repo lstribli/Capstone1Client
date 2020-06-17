@@ -90,10 +90,10 @@ function ThingReviews({ thing = {}, reviews = [], onDelete }) {
           <p>
             {review.content}
           </p>
-          <Link
+          {/* <Link
             to='/edit'>
             <Button >Edit</Button>
-          </Link>
+          </Link> */}
 
           <Button onClick={() => ThingApiService.deleteReview(review.id).then(() => onDelete(review.id))}>Delete</Button>
         </li>

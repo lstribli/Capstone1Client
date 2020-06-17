@@ -12,6 +12,13 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <div className='Header__logged-in'>
+        <h1>
+          <Link to='/meditations'>
+            <Button>
+              Meditate
+            </Button>
+          </Link>
+        </h1>
         <Link
           onClick={this.handleLogoutClick}
           to='/login'>
@@ -52,13 +59,7 @@ export default class Header extends Component {
             </Button>
           </Link>
         </h1>
-        <h1>
-          <Link to='/meditations'>
-            <Button>
-              Meditate
-            </Button>
-          </Link>
-        </h1>
+
         <span className='Header__tagline--wide'>'Meditate, Reflect, Renew'</span>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()

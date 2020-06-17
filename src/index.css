@@ -9,7 +9,13 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus {
+  border: 1px solid rgb(65, 225, 204);
+  -webkit-text-fill-color: rgb(65, 225, 204);
+  -webkit-box-shadow: 0 0 0px 1000px rgba(91, 4, 131, 0.568) inset;
+  transition: background-color 5000s ease-in-out 3s;
+}
+
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
@@ -28,6 +34,9 @@ select:-webkit-autofill:focus {
 } */
 header {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -47,10 +56,10 @@ html::after {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 100%;
+  width: 200%;
   height: 400%;
   z-index: -1;
-  opacity: 0.48;
+  opacity: 0.78;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -88,7 +97,15 @@ h6 {
   font-weight: bolder;
   text-shadow: 1px 1px magenta;
 }
-
+.appInstruct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(91, 4, 131, 0.75);
+  border-radius: 50%;
+  width: 120px;
+}
 li {
   list-style: none;
 }
@@ -101,7 +118,7 @@ p {
   margin: 9px;
   padding: 15px;
   color: rgb(65, 225, 204);
-  background-color: rgba(91, 4, 131, 0.568);
+  background-color: rgba(91, 4, 131, 0.75);
   border: 1px solid magenta;
   border-radius: 22px;
   font-weight: bold;
@@ -125,4 +142,39 @@ p {
 
 .orange {
   color: #fb4d3d;
+}
+
+@media only screen and (max-width: 600px) {
+  p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    margin: 9px;
+    padding: 15px;
+    color: rgb(65, 225, 204);
+    background-color: rgba(91, 4, 131, 0.568);
+    border: 1px solid magenta;
+    border-radius: 22px;
+    font-weight: bold;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
