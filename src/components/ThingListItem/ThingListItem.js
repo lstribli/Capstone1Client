@@ -22,19 +22,6 @@ export default class ThingListItem extends Component {
   }
 }
 
-// function readableReviewCount(number) {
-//   switch(number) {
-//     case 0:
-//       return 'no reviews yet'
-
-//     case 1:
-//       return `based on 1 review`
-
-//     default:
-//       return `based on ${number} reviews`
-//   }
-// }
-
 function truncate(text) {
   const words = text.split(' ')
 

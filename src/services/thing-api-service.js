@@ -59,8 +59,7 @@ const ThingApiService = {
           : res.json()
       )
   },
-  postReview(title, content, thing_id, user_id) {
-
+  postReview(title, content, user_id, thing_id, next) {
     return fetch(`${config.API_ENDPOINT}/notes`, {
       method: 'POST',
       headers: {
@@ -75,14 +74,13 @@ const ThingApiService = {
       }),
     })
       .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
+        res.json()
       )
+      .catch(next)
   },
 
   deleteReview(review, next) {
-    console.log(review)
+    // console.log(review)
     return fetch(`${config.API_ENDPOINT}/notes/${review}`, {
       method: 'DELETE',
       headers: {
@@ -95,8 +93,8 @@ const ThingApiService = {
     )
       .catch(next)
   },
-  editReview(title, content, user_id, review, ) {
-    console.log(review)
+  editReview(title, content, user_id, review,) {
+    // console.log(review)
     const newReview = {
       body: JSON.stringify({
         title,

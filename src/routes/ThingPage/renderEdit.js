@@ -8,7 +8,7 @@ export default class EditNotePage extends React.Component {
   static contextType = thingContext
   render() {
     const { reviews } = this.context
-    console.log(this.context)
+    // console.log(this.context)
 
     return (
       <form

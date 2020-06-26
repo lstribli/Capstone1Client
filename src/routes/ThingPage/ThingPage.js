@@ -33,7 +33,7 @@ export default class ThingPage extends Component {
 
   renderThing() {
     const { thing, reviews } = this.context
-    console.log(thing.image)
+    // console.log(thing.image)
     return <>
       <div className='ThingPage__image' style={{ backgroundImage: `url(${thing.image})` }} />
       <h2>{thing.title}</h2>
@@ -56,7 +56,7 @@ export default class ThingPage extends Component {
     } else {
       content = this.renderThing()
     }
-    console.log(content)
+    // console.log(content)
     return (
       <Section className='ThingPage'>
         {content}
@@ -75,7 +75,7 @@ function ThingContent({ thing }) {
 
 
 function ThingReviews({ thing = {}, reviews = [], onDelete }) {
-
+  // console.log(reviews)
   const revByMID = reviews.filter(rev => rev.mood_id === thing.id)
 
   return (

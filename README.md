@@ -2,6 +2,9 @@
 
 # Link to the live project: https://capstone-client.lstribli.now.sh/
 
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](https://media.discordapp.net/attachments/701514992767205459/720511743423545384/Screenshot_94.png?width=1125&height=627)
+
 # API Documentation:
 
 1. The auth/login endpoint: Users may use POST to send their login credentials to the server, which sends back an encrypted web token allowing them to access all of their own data for the duration of the session. Logging out destroys this token.

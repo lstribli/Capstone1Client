@@ -10,7 +10,17 @@ import { Button } from '../Utils/Utils'
 
 export default class ReviewForm extends Component {
   static contextType = ThingContext
+  componentDidMount() {
+    const { thingId } = this.props.match.params
 
+    this.context.clearError()
+    ThingApiService.getThing(thingId)
+      .then(this.context.setThing)
+      .catch(this.context.setError)
+    ThingApiService.getThingReviews(thingId)
+      .then(this.context.setReviews)
+      .catch(this.context.setError)
+  }
   handleSubmit = ev => {
     ev.preventDefault()
     // const e = ev.nativeEvent
@@ -22,15 +32,12 @@ export default class ReviewForm extends Component {
     // console.log('reviewForm: handlesubmit: ev:', ev)
     ThingApiService.postReview(title.value, content.value, thingId, user_id)
       .then(this.context.addReview)
-      .then(() => {
-        title.value = ''
-        content.value = ''
-        // console.log(content.value)
-      })
       .catch(this.context.setError)
+
   }
 
   render() {
+
     const thing = this.context.thing
     // console.log(thing)
     // const { thingId } = this.props.match.params
@@ -64,7 +71,7 @@ export default class ReviewForm extends Component {
           </Textarea>
         </div>
 
-        <Button onClick={() => ThingApiService.postReview(thing)} type='submit'>
+        <Button onClick={() => ThingApiService.postReview()} type='submit'>
           Post Note
         </Button>
       </form>
