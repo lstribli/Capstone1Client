@@ -2,8 +2,7 @@
 
 # Link to the live project: https://capstone-client.lstribli.now.sh/
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](https://media.discordapp.net/attachments/701514992767205459/720511743423545384/Screenshot_94.png?width=1125&height=627)
+[Alt Text](https://media.discordapp.net/attachments/701514992767205459/720511743423545384/Screenshot_94.png?width=1125&height=627)
 
 # API Documentation:
 
